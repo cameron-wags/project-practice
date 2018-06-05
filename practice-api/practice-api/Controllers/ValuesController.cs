@@ -23,17 +23,17 @@ namespace practice_api.Controllers
             return "value";
         }
         //Alex's Controllers
-        [HttpGet]
-        public string Add(int alpha, int beta)
-        {
-            return  alpha + beta;
-        }
+        //[HttpGet]
+       // public string Add(int alpha, int beta)
+        //{
+            //return  alpha + beta;
+       // }
 
-        [HttpGet]
-        public string Subtract(int alpha, int beta)
-        {
-            return  alpha - beta;
-        }
+        //[HttpGet]
+        //public string Subtract(int alpha, int beta)
+       // {
+         //   return  alpha - beta;
+        //}
         //End Alex's Controllers
         // POST api/values
         [HttpPost]
