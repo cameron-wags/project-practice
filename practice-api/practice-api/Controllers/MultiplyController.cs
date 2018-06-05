@@ -13,23 +13,11 @@ namespace practice_api.Controllers
     public class MultiplyController : Controller
     {
         [HttpGet]
-        //[Route("api/Math/Multiply")]
-        public IActionResult Get()
+        public string Get([FromQuery] string arg1, [FromQuery] string arg2)
         {
-            return Ok();
+
+            return (int.Parse(arg1) * int.Parse(arg2)).ToString();
         }
 
-        //[HttpGet]
-        //public IActionResult Divide(int arg1, int arg2)
-        //{
-        //    if (arg2 == 0)
-        //    {
-        //        return BadRequest("Cannot divide by zero");
-        //    }
-        //    else
-        //    {
-        //        return Ok(arg1 / arg2);
-        //    }
-        //}
     }
 }
