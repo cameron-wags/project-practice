@@ -1,4 +1,4 @@
-FROM microsoft/aspnetcore-build:2.0
+FROM microsoft/aspnetcore-build:2.0 AS build
 
 WORKDIR /app
 
@@ -9,8 +9,13 @@ RUN dotnet restore
 # Copy the whole project into the container
 COPY ./ .
 
-RUN dotnet build
+RUN dotnet build --no-restore
+
+FROM build AS package
 RUN dotnet publish -o ./out/
 
-WORKDIR /app/out
+FROM microsoft/aspnetcore:2.0 AS runtime
+WORKDIR /app
+COPY --from=package /app/out/ .
+
 ENTRYPOINT [ "dotnet", "practice-api.dll" ]
