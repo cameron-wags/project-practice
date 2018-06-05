@@ -7,8 +7,7 @@ COPY ./ .
 
 RUN dotnet restore
 RUN dotnet build
-RUN dotnet publish -o ./out
+RUN dotnet publish -o ./out/
 
 WORKDIR /app/out
-
 ENTRYPOINT [ "dotnet", "practice-api.dll" ]
