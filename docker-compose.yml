@@ -1,0 +1,12 @@
+version: "3"
+services:
+  api:
+    image: practice-api
+    networks:
+      - net
+    environment:
+      ASPNETCORE_URLS: "http://*:4200"
+    ports:
+      - "9000:80"
+networks:
+  net:
