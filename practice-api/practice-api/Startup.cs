@@ -35,6 +35,7 @@ namespace practice_api
             }
 
             app.UseMvc();
+           
         }
     }
 }
