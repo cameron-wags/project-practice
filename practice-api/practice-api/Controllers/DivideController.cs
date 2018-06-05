@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace practice_api.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Mod")]
+    [Route("api/Divide")]
     public class DivideController : Controller
     {
         public string Get([FromQuery] string value1, [FromQuery] string value2)
