@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace practice_api.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Sub")]
-    public class SubController : Controller
+    [Route("api/Add")]
+    public class AddController : Controller
     {
         public string Get([FromQuery] string value1, [FromQuery] string value2)
         {
 
-            return (int.Parse(value1) - int.Parse(value2)).ToString();
+            return (int.Parse(value1) + int.Parse(value2)).ToString();
         }
     }
 }
