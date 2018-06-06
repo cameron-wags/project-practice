@@ -11,10 +11,10 @@ namespace practice_api.Controllers
     [Route("api/Divide")]
     public class DivideController : Controller
     {
-        public string Get([FromQuery] string arg1, [FromQuery] string arg2)
+        public string Get([FromQuery] string value1, [FromQuery] string value2)
         {
 
-            return (int.Parse(arg1) / int.Parse(arg2)).ToString();
+            return (int.Parse(value1) / int.Parse(value2)).ToString();
         }
     }
 }
