@@ -13,8 +13,17 @@ namespace practice_api.Controllers
     {
         public string Get([FromQuery] string value1, [FromQuery] string value2)
         {
+            var result = "";
+            try
+            {
+                result = (int.Parse(value1) % int.Parse(value2)).ToString();
+            }
+            catch
+            {
+                result = "Invalid input";
+            }
 
-            return (int.Parse(value1) % int.Parse(value2)).ToString();
+            return result;
         }
     }
 }
