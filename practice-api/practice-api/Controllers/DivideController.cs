@@ -11,6 +11,7 @@ namespace practice_api.Controllers
     [Route("api/Divide")]
     public class DivideController : Controller
     {
+        //dddddddd
         public string Get([FromQuery] string value1, [FromQuery] string value2)
         {
 
