@@ -76,6 +76,15 @@ namespace PracticeTest
             Assert.Equal(expected, actual);
         }
 
+        [Fact]
+        public void TestGetInValidInputs4()
+        {
+            string expected = "";
+            string actual = _controller.Get(null, null);
+
+            Assert.Equal(expected, actual);
+        }
+
 
 
     }

@@ -9,7 +9,6 @@ namespace practice_api.Controllers
 {
     [Produces("application/json")]
     [Route("api/Multiply")]
-    
     public class MultiplyController : Controller
     {
         [HttpGet]
