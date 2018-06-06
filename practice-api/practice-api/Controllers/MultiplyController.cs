@@ -14,8 +14,17 @@ namespace practice_api.Controllers
         [HttpGet]
         public string Get([FromQuery] string value1, [FromQuery] string value2)
         {
-
-            return (int.Parse(value1) * int.Parse(value2)).ToString();
+            int val1, val2;
+            try
+            {
+                val1 = int.Parse(value1);
+                val2 = int.Parse(value2);
+            }
+            catch (Exception e)
+            {
+                return "";
+            }
+            return ((val1*val2).ToString());
         }
 
     }
