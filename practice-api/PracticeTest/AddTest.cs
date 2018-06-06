@@ -53,6 +53,17 @@ namespace PracticeTest
             //Assert
             //Assert.IsInstanceOfType(actionResult, typeof(OkResult));
         }
+        [Fact]
+        public void BigAdd()
+        {
+            //Arrange
+            string result;
+            var controller = new practice_api.Controllers.AddController();
+            //Act
+            result = controller.Get("999988887777666655554444333322221111", "111122223333444455556666777788889999");
+            //Assert
+            Assert.True(result == "1111111100000000000000000000000000000");
+        }
     }
         /*
          *New Test Ideas
