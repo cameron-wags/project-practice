@@ -6,13 +6,18 @@ using Xunit;
 
 namespace PracticeTest
 {
-    public class ModTest
+    public class ModTest : IClassFixture<ModController>
     {
+        ModController modCont;
+
+        public ModTest(ModController modCont)
+        {
+            this.modCont = modCont;
+        }
+
         [Fact]
         public void IfValidValuesArePassedIn()
         {
-            var modCont = new ModController();
-
             string value1 = "5";
             string value2 = "2";
 
@@ -24,8 +29,6 @@ namespace PracticeTest
         [Fact]
         public void IfDecmialValuesArePassedIn()
         {
-            var modCont = new ModController();
-
             string value1 = "5.0";
             string value2 = "2.0";
 
@@ -39,8 +42,6 @@ namespace PracticeTest
         [Fact]
         public void IfEmptyStringValuesArePassedIn()
         {
-            var modCont = new ModController();
-
             string value1 ="";
             string value2 ="";
 
@@ -53,12 +54,10 @@ namespace PracticeTest
         [Fact]
         public void IfNullValuesArePassedIn()
         {
-            var modCont = new ModController();
-
             string value1 = null;
             string value2 = null;
 
-            string errorMessage = "Invalid input";
+            string errorMessage = "Null input";
             var result = modCont.Get(value1, value2);
 
             Assert.Equal(errorMessage, result);
@@ -67,8 +66,6 @@ namespace PracticeTest
         [Fact]
         public void IfStringOfLettersPassedIn()
         {
-            var modCont = new ModController();
-
             string value1 = "abc";
             string value2 = "abcd";
 
@@ -81,8 +78,6 @@ namespace PracticeTest
         [Fact]
         public void IfParenthesesAroundValidNumbersArePassedIn()
         {
-            var modCont = new ModController();
-
             string value1 = "(10)";
             string value2 = "(5)";
 
