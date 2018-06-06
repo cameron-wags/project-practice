@@ -18,7 +18,11 @@ namespace practice_api.Controllers
             {
                 result = (int.Parse(value1) % int.Parse(value2)).ToString();
             }
-            catch
+            catch (ArgumentNullException e)
+            {
+                result = "Null input";
+            }
+            catch (FormatException e)
             {
                 result = "Invalid input";
             }
