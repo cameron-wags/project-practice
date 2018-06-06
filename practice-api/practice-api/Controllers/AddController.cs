@@ -16,5 +16,6 @@ namespace practice_api.Controllers
 
             return (int.Parse(value1) + int.Parse(value2)).ToString();
         }
+        
     }
 }
