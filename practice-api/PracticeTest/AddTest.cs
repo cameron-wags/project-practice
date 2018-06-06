@@ -8,18 +8,7 @@ namespace PracticeTest
 {
     public class AddTest
     {
-        [Fact]
-        public void PassingTest()
-        {
-            Assert.True(true);
-        }
-
-        [Fact]
-        public void FailingTest()
-        {
-            Assert.True(false);
-        }
-
+       
         [Fact]
         public void TwoAndThree()
         {
