@@ -14,7 +14,6 @@ namespace practice_api.Controllers
         [HttpGet]
         public string Get([FromQuery] string value1, [FromQuery] string value2)
         {
-            //dddddddd
             int val1, val2;
             try
             {
