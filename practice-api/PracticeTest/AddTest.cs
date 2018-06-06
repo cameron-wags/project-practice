@@ -29,7 +29,7 @@ namespace PracticeTest
             //Act
             result = controller.Get("2", "3");
             //Assert
-            Assert.True(result == "5");
+            Assert.Equal("5", result);
         }
         [Fact]
         public void AddLetters()
@@ -40,7 +40,7 @@ namespace PracticeTest
             //Act
             result = controller.Get("a", "3");
             //Assert
-            Assert.True(result == "Error, Not a Number");
+            Assert.Equal("Error, Not a Number", result);
         }
         [Fact]
         public void ReturnOK()
@@ -62,15 +62,33 @@ namespace PracticeTest
             //Act
             result = controller.Get("999988887777666655554444333322221111", "111122223333444455556666777788889999");
             //Assert
-            Assert.True(result == "1111111100000000000000000000000000000");
+            Assert.Equal("1111111100000000000000000000000000000", result);
+        }
+        [Fact]
+        public void Decimal()
+        {
+            //Arrange
+            string result;
+            var controller = new practice_api.Controllers.AddController();
+            //Act
+            result = controller.Get("9.8", "6.1");
+            //Assert
+            Assert.Equal("Error: Expecting Integers", result);
+        }
+        [Fact]
+        public void NegAdd()
+        {
+            //Arrange
+            string result;
+            var controller = new practice_api.Controllers.AddController();
+            //Act
+            result = controller.Get("-9", "6");
+            //Assert
+            Assert.Equal("-3", result);
         }
     }
         /*
          *New Test Ideas
-         * Add really big numbers
-         * add decimal numbers
-         * add negitive number
-         * 
          */
     }
 }
