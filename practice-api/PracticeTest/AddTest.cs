@@ -51,7 +51,8 @@ namespace PracticeTest
             //Act
             result = controller.Get("999988887777666655554444333322221111", "111122223333444455556666777788889999");
             //Assert
-            Assert.Equal("1111111100000000000000000000000000000", result);
+            //expect an overflow
+            Assert.Equal("Error: Expect 32 bit integer values", result);
         }
         [Fact]
         public void Decimal()
